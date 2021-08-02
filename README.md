@@ -1,3 +1,11 @@
+# Content
+
+* [How to import git into Apache NetBeans IDE](# How to import git into Apache NetBeans IDE)
+
+* [Make a branch | Doing your part of the project](# Make a branch | Doing your part of the project)
+
+* [Push to GitHub* (ONLY IF FINALISED)](# Push to GitHub* (ONLY IF FINALISED))
+
 # How to import git into Apache NetBeans IDE
 
 1. Clone Repository
