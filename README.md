@@ -30,4 +30,42 @@
 
 # Make a branch | Doing your part of the project
 
-1.
+1. Create new branch
+
+![image](https://user-images.githubusercontent.com/75482397/127877184-f3eda4c2-4f8f-4b1f-a445-c814be166d8d.png)
+
+2. Type what ur doing as title
+
+![image](https://user-images.githubusercontent.com/75482397/127877662-f2604409-0e6a-469c-a72f-18cf41721578.png)
+
+3. Commit after changing everything (Click yes for every prompt)
+
+![image](https://user-images.githubusercontent.com/75482397/127878016-c30ebb3d-afdd-43b8-b69d-d72c9b1ae4cf.png)
+
+# Push to GitHub* (ONLY IF FINALISED)
+
+1. Update main* (ONLY IF FINALISED)
+
+![image](https://user-images.githubusercontent.com/75482397/127878199-b6969a10-ba77-495d-8a01-41135b8f1563.png)
+
+![image](https://user-images.githubusercontent.com/75482397/127878310-27388935-d351-4132-a903-284fb5841a95.png)
+
+![image](https://user-images.githubusercontent.com/75482397/127878533-5fe73ece-5eeb-452d-ae21-0c9b7aa92bcc.png)
+
+2. Comapare code and update into GitHub
+
+![image](https://user-images.githubusercontent.com/75482397/127878738-f13defa0-e710-4aea-a7a5-bcd600c22ba6.png)
+
+![image](https://user-images.githubusercontent.com/75482397/127879262-09c074d8-d36f-4d64-9824-cda9275632e8.png)
+
+3. Merge into Main
+
+![image](https://user-images.githubusercontent.com/75482397/127879457-bc497d85-090d-403f-bb31-475c27455ed1.png)
+
+![image](https://user-images.githubusercontent.com/75482397/127879517-7f750632-7e6b-449f-a2cf-2371ea947cb5.png)
+
+![image](https://user-images.githubusercontent.com/75482397/127879579-00994c36-bae0-4aba-98f3-f18c3084134b.png)
+
+# See branches and timeline
+
+![image](https://user-images.githubusercontent.com/75482397/127879874-ff9f51d2-4e2c-40b2-aee6-78f07c5ac469.png)
