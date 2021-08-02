@@ -1,10 +1,10 @@
 # Content
 
-* [How to import git into Apache NetBeans IDE](# How to import git into Apache NetBeans IDE)
+* [How to import git into Apache NetBeans IDE](#how-to-import-git-into-apache-netbeans-ide)
 
-* [Make a branch | Doing your part of the project](# Make a branch | Doing your part of the project)
+* [Make a branch | Doing your part of the project](#make-a-branch--doing-your-part-of-the-project)
 
-* [Push to GitHub* (ONLY IF FINALISED)](# Push to GitHub* (ONLY IF FINALISED))
+* [Push to GitHub* (ONLY IF FINALISED)](#push-to-github-only-if-finalised)
 
 # How to import git into Apache NetBeans IDE
 
