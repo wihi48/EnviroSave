@@ -6,6 +6,8 @@
 
 * [Push to GitHub* (ONLY IF FINALISED)](#push-to-github-only-if-finalised)
 
+* [See branches and timeline](#see-branches-and-timeline)
+
 # How to import git into Apache NetBeans IDE
 
 1. Clone Repository
