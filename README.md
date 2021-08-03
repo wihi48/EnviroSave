@@ -53,16 +53,13 @@
 
 # Push to GitHub* (ONLY IF FINALISED)
 
-1. Update code into main* (ONLY IF FINALISED)
-
-<img src="https://user-images.githubusercontent.com/75482397/127879457-bc497d85-090d-403f-bb31-475c27455ed1.png" width="250">
-<img src="https://user-images.githubusercontent.com/75482397/127879517-7f750632-7e6b-449f-a2cf-2371ea947cb5.png" width="250">
-<img src="https://user-images.githubusercontent.com/75482397/127879579-00994c36-bae0-4aba-98f3-f18c3084134b.png" width="250">
-
-2. Compare code and update into GitHub
+Compare code and update main* (ONLY IF FINALISED)
 
 <img src="https://user-images.githubusercontent.com/75482397/127878738-f13defa0-e710-4aea-a7a5-bcd600c22ba6.png" width="250">
 <img src="https://user-images.githubusercontent.com/75482397/127879262-09c074d8-d36f-4d64-9824-cda9275632e8.png" width="250">
+<img src="https://user-images.githubusercontent.com/75482397/127879457-bc497d85-090d-403f-bb31-475c27455ed1.png" width="250">
+<img src="https://user-images.githubusercontent.com/75482397/127879517-7f750632-7e6b-449f-a2cf-2371ea947cb5.png" width="250">
+<img src="https://user-images.githubusercontent.com/75482397/127879579-00994c36-bae0-4aba-98f3-f18c3084134b.png" width="250">
 
 # See branches and timeline
 
