@@ -14,6 +14,67 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!--CardView & Image Cropping-->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            /* Float three columns side by side */
+            .column {
+                float: left;
+                width: 33.33%;
+                padding: 0 10px;
+            }
+
+            /* Remove extra left and right margins, due to padding */
+            .row {
+                margin: 0 -5px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Responsive columns */
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 20px;
+                }
+            }
+
+            /* Style the counter cards */
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                padding: 16px;
+                text-align: center;
+                background-color: #f1f1f1;
+                height: 400px;
+            }
+
+            .image-cropper {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+
+            img {
+                display: inline;
+                height: 100%;
+                width: auto;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -48,33 +109,61 @@
             </div>
         </header>
         <!-- Main Content-->
+
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <h1>People involved:</h1>
                         <hr>
-                        <h3>Muhammad Aiman Bin Abu Hassan</h3>
-                        <p>Leader of the project. Has done:</p>
-                        <ul>
-                            <li>About Page</li>
-                        </ul>
                         <br>
-                        <h3>Thng Jansen</h3>
-                        <p>Member of the project. Has done:</p>
-                        <ul>
-                            <li>SQL DataBase</li>
-                        </ul>
-                        <br>
-                        <h3>Gowtham Karthik Raju</h3>
-                        <p>Member of the project. Has done:</p>
-                        <ul>
-                            <li>Home Page</li>
-                        </ul>
+                    </div>
+                </div>
+                <!--This is a card-->
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/AimanPic.jpg"/>
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Muhammad Aiman Bin Abu Hassan</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">Student in Singapore Polytechnic. Likes to build Desktops for fun. Favourite food is Laksa.</p>
+                            Leader of the project. Has done:
+                            <ul>
+                                <li>About Page</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/AimanPic.jpg"/>
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Thng Jansen</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">Student in Singapore Polytechnic. Likes to build Desktops for fun. Favourite food is Laksa.</p>
+                            Member of the project. Has done:
+                            <ul>
+                                <li>SQL DataBase</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/AimanPic.jpg"/>
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Gowtham Karthik Raju</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">Student in Singapore Polytechnic. Likes to build Desktops for fun. Favourite food is Laksa.</p>
+                            Member of the project. Has done:
+                            <ul>
+                                <li>Home Page</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -106,7 +195,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; EnviroSave 2021</div>
                     </div>
                 </div>
             </div>
