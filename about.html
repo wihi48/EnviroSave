@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>EnviroSave - About Us</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -14,6 +14,66 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!--CardView & Image Cropping-->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            /* Float three columns side by side */
+            .column {
+                float: left;
+                width: 33.33%;
+                padding: 0 10px;
+            }
+
+            /* Remove extra left and right margins, due to padding */
+            .row {
+                margin: 0 -5px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Responsive columns */
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 20px;
+                }
+            }
+
+            /* Style the counter cards */
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                padding: 16px;
+                text-align: center;
+                background-color: #f1f1f1;
+            }
+
+            .image-cropper {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+
+            img {
+                display: inline;
+                height: 100%;
+                width: auto;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -40,25 +100,81 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>About Me</h1>
-                            <span class="subheading">This is what I do.</span>
+                            <h1>About Us</h1>
+                            <span class="subheading">This is what we do.</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
+
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                        <h1>Our Goal</h1>
+                        <hr>
+                        <h3>Climate. Justice. Solutions.</h3>
+                        <p>
+                            It is not easy to help the environment especially when we are busy with our individual lives.
+                            Thus, we have made this platform to share the information when and where the environment needs attention and help.
+                        </p>
+                        <br><br>
+                        <h1>Our Location</h1><hr>
+                        500 Dover Rd, Singapore 139651
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7758676388303!2d103.77536081525605!3d1.3097810620664958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a602ff17c15%3A0xa9545dd23993859e!2sSingapore%20Polytechnic!5e0!3m2!1sen!2ssg!4v1628509178670!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <br><br>
+                        <h1>People involved:</h1>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+                <!--This is a card-->
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/AimanPic.jpg"/>
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Muhammad Aiman Bin Abu Hassan</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">P2043805<br>Student in Singapore Polytechnic. Likes to build Desktops for fun. Favourite food is Laksa.</p>
+                            Leader of the project. Has done:
+                            <ul>
+                                <li>About Page</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/JansenPic.jpeg">
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Thng Jansen</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">P2033006<br>Student in Singapore Polytechnic. Likes to play bad games. Favourite food is Chocomint pineapple durian pizza</p>
+                            Member of the project. Has done:
+                            <ul>
+                                <li>SQL DataBase</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="image-cropper">
+                                <img src="assets/img/GowthamPic.jpeg"/>
+                            </div>
+                            <h6 style=" margin-left: 100px; font-size: 12px">Gowtham Karthik Raju</h6>
+                            <p style=" margin-left: 100px; font-size: 12px">P2039367<br>Studying Computer Engineering in Singapore Polytechnic. Likes playing soccer. Favourite food is Seafood fried rice.</p>
+                            Member of the project. Has done:
+                            <ul>
+                                <li>Home Page</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -90,7 +206,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; EnviroSave 2021</div>
                     </div>
                 </div>
             </div>
