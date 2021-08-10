@@ -16,6 +16,24 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+        <?php
+        
+        $msg = "";
+        if(isset($_POST['upload'])){
+        $target = "assets/img/".basename($_FILES['image']['name']);
+        $db = mysqli_connect("localhost", "root", "", "photos");
+        $image = $_FILES['image']['name'];
+        $text = $_POST['text'];
+        $sql = "INSERT INTO images (image, text) VALUES ('$image', '$text')";
+        mysqli_query($db, $sql);
+        
+        if (move_uploaded_file($_FILES['image']['tmp_name'],$target)){
+            $msg = "Image uploaded Successfully";
+        } else{
+            $msg = "There was a problem uploading image";
+        }
+    }
+        ?>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -57,11 +75,33 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
-                        <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
-                        <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-                        <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-                        <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                       
+                        <div id="content">
+                            <?php
+                                $db = mysqli_connect("localhost", "root", "", "photos");
+                                $sql = "SELECT * FROM images";
+                                $result = mysqli_query($db, $sql);
+                                while ($row = mysqli_fetch_array($result)){
+                                    echo "<div id='img_div'>";
+                                        echo"<img src='assets/img/".$row['image']."' width=\"300\" height=\"200\"> ";
+                                        echo"<p>".$row['text']."</p>";
+                                    echo "</div>";
+                                }
+                            ?>
+                            <form method="post" action="post.php" enctype="multipart/form-data">
+                                <input type="hidden" name="size" value="1000000">
+                                <div>
+                                    <input type="file" name="image">
+                                
+                                </div>
+                                <div>
+                                    <textarea name="text" cols="40" rows="4" placeholder="Say something about this image..."></textarea>
+                                </div>
+                                <div>
+                                    <input type="submit" name="upload" value="Upload Image">
+                                </div>
+                            </form>
+                        </div>
                         <h2 class="section-heading">The Final Frontier</h2>
                         <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
                         <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
