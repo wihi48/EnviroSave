@@ -15,71 +15,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!--CardView & Image Cropping-->
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            /* Float three columns side by side */
-            .column {
-                float: left;
-                width: 100%;
-                padding: 0 10px;
-            }
-
-            /* Remove extra left and right margins, due to padding */
-            .row {
-                margin: 0 -5px;
-            }
-
-            /* Clear floats after the columns */
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
-            /* Responsive columns */
-            @media screen and (max-width: 600px) {
-                .column {
-                    width: 100%;
-                    display: block;
-                    margin-bottom: 20px;
-                }
-            }
-
-            /* Style the counter cards */
-            .card {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                padding: 16px;
-                text-align: center;
-                background-color: #f1f1f1;
-            }
-
-            .image-cropper {
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                overflow: hidden;
-                border-radius: 50%;
-            }
-
-            img {
-                display: inline;
-                height: 100%;
-                width: auto;
-            }
-        </style>
+        <link href="css/CardviewAndImagecrop.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">EnviroSave</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -88,7 +30,7 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Post Image</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -183,27 +125,30 @@
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
                                 <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                    <a href="https://twitter.com/">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                    <a href="https://facebook.com/">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                    <a href="https://instagram.com/">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
                             </li>
                         </ul>
                         <div class="small text-center text-muted fst-italic">Copyright &copy; EnviroSave 2021</div>
