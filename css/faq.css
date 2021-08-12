@@ -1,5 +1,5 @@
 a{
-color: #282425!important;	
+color: #00008b !important;	
 }
 ul.nav.nav-tabs > li{
 	display: inline-block;
@@ -10,7 +10,7 @@ ul.nav.nav-tabs > li{
 ul.nav.nav-tabs > li a{
 	display:block;
 	padding:15px;
-	color: #282425!important;
+	color: #00008b !important;
 	
 }
 ul.nav.nav-tabs > li a:hover, ul.nav.nav-tabs > li:hover{
@@ -19,7 +19,7 @@ ul.nav.nav-tabs > li a:hover, ul.nav.nav-tabs > li:hover{
 	text-decoration: none!important;
 }
 ul.nav.nav-tabs > li a.active{
-	background:	#282425;
+	background:	#00008b ;
 	color:#fff!important;
 	text-decoration: none!important;
 }
