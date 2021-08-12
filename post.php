@@ -1,3 +1,32 @@
+<?php
+$conn= new mysqli('localhost', 'root', '', 'ratingSystem');
+    if (isset($_POST['save'])){
+        
+        $uID=$conn->real_escape_string($_POST['uID']);
+        $ratedIndex=$conn->real_escape_string($_POST['ratedIndex']);
+        $ratedIndex++;
+        
+        if(!$uID){
+            $conn->query("INSERT INTO stars (rateIndex) VALUES ('$ratedIndex')");
+            $sql = $conn->query("SELECT id FROM stars ORDER BY id DESC LIMIT 1");
+            $uData = $sql->fetch_assoc();
+            $uID = $uData['id'];
+        } else {
+            $conn->query("UPDATE stars SET rateIndex='$ratedIndex' WHERE id='$uID'");
+        }
+        exit(json_encode(array('id'=>$uID)));
+    }
+    $sql = $conn->query("SELECT id FROM stars");
+    $numR = $sql->num_rows;
+    
+    $sql = $conn->query("SELECT SUM(rateIndex) AS total FROM stars");
+    $rData = $sql->fetch_array();
+    $total = $rData['total'];
+    
+    $avg = $total/$numR;
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +43,67 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/4d660a4408.js" crossorigin="anonymous"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            <script>
+                              var ratedIndex = -1, uID=0;
+                              $(document).ready(function(){
+                               resetStarColors();
+                               if (localStorage.getItem('ratedIndex')!= null){
+                                   setStars(parseInt(localStorage.getItem('ratedIndex')));
+                                   uID = localStorage.getItem('uID');
+                               }
+                                    $('.fa-star').on('click',function(){
+                                        ratedIndex = parseInt($(this).data('index'));
+                                        localStorage.setItem('ratedIndex',ratedIndex);
+                                        saveToTheDB();
+                                    });
+                                    $('.fa-star').mouseover(function(){
+                                      resetStarColors();
+                                      
+                                      var currentIndex = parseInt($(this).data('index'));
+                                      
+                                      setStars(currentIndex);
+                                        
+                                    });
+                                    $('.fa-star').mouseleave(function(){
+                                        resetStarColors();
+                                        
+                                        if (ratedIndex!=-1){
+                                            setStars(ratedIndex);
+                                        }
+                                        
+                                    });
+                                });
+                                function saveToTheDB(){
+                                    $.ajax({
+                                        url: "post.php",
+                                        method: "POST",
+                                        dataType: 'json',
+                                        data:{
+                                            save: 1,
+                                            uID: uID,
+                                            ratedIndex: ratedIndex
+                                        }, success:function(r){
+                                            uID=r.id;
+                                            localStorage.setItem('uID',uID);
+                                        }
+                                    });
+                                }
+                                function setStars(max){
+                                    for (var i=0; i<=max;i++){
+                                                $('.fa-star:eq('+i+')').css('color','orange');
+                                            }
+                                }
+                                function resetStarColors(){
+                                    $('.fa-star').css('color','black');
+                                }
+                                
+                            </script>
+
+
+       
     </head>
     <body>
         <?php
@@ -34,6 +124,12 @@
         }
     }
         ?>
+        <?php
+        $sql1="SELECT image FROM images";
+        $dbc = mysqli_connect("localhost", "root", "", "photos");
+        $result1 = mysqli_query($dbc,$sql1) or die ("Bad Insert: $sql1");
+        ?>
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -46,7 +142,7 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.php">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -84,10 +180,15 @@
                                 while ($row = mysqli_fetch_array($result)){
                                     echo "<div id='img_div'>";
                                         echo"<img src='assets/img/".$row['image']."' width=\"300\" height=\"200\"> ";
+                                        
                                         echo"<p>".$row['text']."</p>";
                                     echo "</div>";
+                                    
+                                    
                                 }
+                                
                             ?>
+                            
                             <form method="post" action="post.php" enctype="multipart/form-data">
                                 <input type="hidden" name="size" value="1000000">
                                 <div>
@@ -102,23 +203,35 @@
                                 </div>
                             </form>
                         </div>
-                        <h2 class="section-heading">The Final Frontier</h2>
-                        <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-                        <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-                        <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-                        <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-                        <h2 class="section-heading">Reaching for the Stars</h2>
-                        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-                        <a href="#!"><img class="img-fluid" src="assets/img/post-sample-image.jpg" alt="..." /></a>
-                        <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-                        <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-                        <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-                        <p>
-                            Placeholder text by
-                            <a href="http://spaceipsum.com/">Space Ipsum</a>
-                            &middot; Images by
-                            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
-                        </p>
+                        
+                        <table>
+                            <?php
+                            $i=0;
+                            while($row=mysqli_fetch_assoc($result1)){
+                                if($i%3==0){
+                                    echo"<tr>";
+                                }
+                                echo"<td>"."<img src='assets/img/".$row['image']."'width=\"100\" height=\"70\"></td>";
+                                if($i%3==2){
+                                    echo"</tr>";
+                                }
+                                $i++;
+                            }
+                            ?>
+                        </table>
+                        <div>
+                            <p>
+                                How would you rate your experience with this site?
+                            </p>
+                            <i class="fas fa-star" data-index='0'></i>
+                            <i class="fas fa-star" data-index='1'></i>
+                            <i class="fas fa-star" data-index='2'></i>
+                            <i class="fas fa-star" data-index='3'></i>
+                            <i class="fas fa-star" data-index='4'></i>
+                            <br><br>
+                            <?php echo round($avg, 2)?>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
