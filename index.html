@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/diyAccordion.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -63,6 +64,40 @@
                             on July 8, 2021
                         </p>
                     </div>
+                    <h3>FREQUENTLY ASKED QUESTIONS (FAQ)</h3> <hr> <br>
+                    <!--Accordions-->
+                    <button class="DIYaccordion">What is EnviroSave?</button>
+                    <div class="panel">
+                        <p>EnviroSave is a website which</p>
+                    </div>
+
+                    <button class="DIYaccordion">What technology does EnviroSave use?</button>
+                    <div class="panel">
+                        <p>EnviroSave is built using PHP, Javascript, HTML and CSS.</p>
+                    </div>
+
+                    <button class="DIYaccordion">What browsers does EnviroSave support?</button>
+                    <div class="panel">
+                        <p>We support the current and previous major releases of Google Chrome, Firefox, Safari, Microsoft Edge, and Internet Explorer on a rolling basis. Each time a new version is released, we begin supporting that version and stop supporting the third most recent version.</p>
+                    </div>
+                    <!--Accordions Script-->
+                    <script>
+                        var acc = document.getElementsByClassName("DIYaccordion");
+                        var i;
+
+                        for (i = 0; i < acc.length; i++) {
+                            acc[i].addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var panel = this.nextElementSibling;
+                                if (panel.style.maxHeight) {
+                                    panel.style.maxHeight = null;
+                                } else {
+                                    panel.style.maxHeight = panel.scrollHeight + "px";
+                                }
+                            });
+                        }
+                    </script>
+
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Pager-->
