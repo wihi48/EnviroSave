@@ -54,55 +54,78 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Failure is not an option</h2>
-                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on July 8, 2021
-                        </p>
-                    </div>
-                    <h3>FREQUENTLY ASKED QUESTIONS (FAQ)</h3> <hr> <br>
-                    <!--Accordions-->
-                    <button class="DIYaccordion">What is EnviroSave?</button>
-                    <div class="panel">
-                        <p>EnviroSave is a website which</p>
-                    </div>
 
-                    <button class="DIYaccordion">What technology does EnviroSave use?</button>
-                    <div class="panel">
-                        <p>EnviroSave is built using PHP, Javascript, HTML and CSS.</p>
+                        <h2 class="post-title">EnviroSave Purpose</h2>
+                        <p>EnviroSave was created in order to increase awareness about what is happening to our environment. Through sharing events that occur in people's daily life pertaining to environment, we wish to support and help each other in order to preserve the wellness of our environment.</p>
+                        
+                        <h2 class="post-title">This is how you can help</h2>
+                        <br><!-- comment -->
+                        
+                        <hr>
+                        
+                        <h4 class="post-title">1.Click On Post Image</h4>
+
+
+                        <video width="320" height="240" autoplay muted controls loop>
+                            <source src="assets/video/number1.mp4" type="video/mp4">
+                            <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+
                     </div>
-
-                    <button class="DIYaccordion">What browsers does EnviroSave support?</button>
-                    <div class="panel">
-                        <p>We support the current and previous major releases of Google Chrome, Firefox, Safari, Microsoft Edge, and Internet Explorer on a rolling basis. Each time a new version is released, we begin supporting that version and stop supporting the third most recent version.</p>
-                    </div>
-                    <!--Accordions Script-->
-                    <script>
-                        var acc = document.getElementsByClassName("DIYaccordion");
-                        var i;
-
-                        for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener("click", function () {
-                                this.classList.toggle("active");
-                                var panel = this.nextElementSibling;
-                                if (panel.style.maxHeight) {
-                                    panel.style.maxHeight = null;
-                                } else {
-                                    panel.style.maxHeight = panel.scrollHeight + "px";
-                                }
-                            });
-                        }
-                    </script>
-
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Pager-->
+                    <hr><!-- comment -->
+                    <h4 class="post-title">2.Upload and Enter Description</h4>
+                    <video width="320" height="240" autoplay muted controls loop>
+                        <source src="assets/video/number2.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="post.php">Start Posting →</a></div>
+                <br><!-- comment -->
+                <br>
+             
+                
+                <br>
                 </div>
+               
+                
+                <h3>FREQUENTLY ASKED QUESTIONS (FAQ)</h3> <hr> <br>
+                <!--Accordions-->
+                <button class="DIYaccordion">Am i able to delete my post?</button>
+                <div class="panel">
+                    <p>You can send us an email through the contact page to request your post to be deleted and we will manually review your post for deletion.</p>
+                </div>
+
+                <button class="DIYaccordion">What technology does EnviroSave use?</button>
+                <div class="panel">
+                    <p>EnviroSave is built using SQL Database , PHP, Javascript, HTML, CSS, Bootstrap, Ajax and JQuery.</p>
+                </div>
+
+                <button class="DIYaccordion">What browsers does EnviroSave support?</button>
+                <div class="panel">
+                    <p>We support the current and previous major releases of Google Chrome, Firefox, Safari, Microsoft Edge, and Internet Explorer on a rolling basis. Each time a new version is released, we begin supporting that version and stop supporting the third most recent version.</p>
+                </div>
+                <!--Accordions Script-->
+                <script>
+                    var acc = document.getElementsByClassName("DIYaccordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight) {
+                                panel.style.maxHeight = null;
+                            } else {
+                                panel.style.maxHeight = panel.scrollHeight + "px";
+                            }
+                        });
+                    }
+                </script>
+
+                <!-- Divider-->
+                <!-- Pager-->
+
             </div>
         </div>
         <!-- Footer-->
